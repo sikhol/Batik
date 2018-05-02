@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.6.6deb5
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Apr 30, 2018 at 10:25 AM
--- Server version: 10.1.28-MariaDB
--- PHP Version: 7.1.11
+-- Host: localhost:3306
+-- Generation Time: May 02, 2018 at 09:51 PM
+-- Server version: 5.7.21-1ubuntu1
+-- PHP Version: 7.2.3-1ubuntu1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -39,7 +37,26 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id`, `username`, `password`) VALUES
-(1, 'admin', 'admin123');
+(1, 'admin', '0192023a7bbd73250516f069df18b500');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `data`
+--
+
+CREATE TABLE `data` (
+  `id` int(11) NOT NULL,
+  `date` date NOT NULL,
+  `counter` int(125) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `data`
+--
+
+INSERT INTO `data` (`id`, `date`, `counter`) VALUES
+(1, '2018-05-02', 8);
 
 -- --------------------------------------------------------
 
@@ -88,7 +105,7 @@ CREATE TABLE `login` (
 --
 
 INSERT INTO `login` (`id`, `username`, `password`) VALUES
-(1, 'admin', 'admin');
+(1, 'admin', '21232f297a57a5a743894a0e4a801fc3');
 
 -- --------------------------------------------------------
 
@@ -131,6 +148,12 @@ ALTER TABLE `admin`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `data`
+--
+ALTER TABLE `data`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `kontak`
 --
 ALTER TABLE `kontak`
@@ -157,26 +180,26 @@ ALTER TABLE `produk`
 --
 ALTER TABLE `admin`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
+--
+-- AUTO_INCREMENT for table `data`
+--
+ALTER TABLE `data`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `kontak`
 --
 ALTER TABLE `kontak`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-
 --
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
 --
 -- AUTO_INCREMENT for table `produk`
 --
 ALTER TABLE `produk`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
-COMMIT;
-
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
