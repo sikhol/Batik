@@ -8,7 +8,7 @@ class Batik_model extends CI_Model{
 
 	function data($number,$offset){
 		$output='';
-		$batik = $this->db->get('produk',$number,$offset)->result_array();	
+		$batik = $this->db->get('produk',$number,$offset)->result_array();
 		$i=0; $scp = base_url("assets/js/ninja-slider.js");
 		foreach ($batik as $u ) {
 			$src = base_url()."assets/img/uploads/".$u['gambar'];
@@ -62,6 +62,12 @@ class Batik_model extends CI_Model{
 		$query=$this->db->get('produk');
 		return $query->result_array();
 	}
+
+	public function get_counter(){
+		$query=$this->db->get('data');
+		return $query->result_array();
+	}
+
 	public function batik_paginate($number, $offset) {
 		return $this->db->get('produk',$number, $offset)->result_array();
 	}
@@ -78,6 +84,16 @@ class Batik_model extends CI_Model{
   {
    $this->db->insert('produk', $data);
   }
+
+  	public function counter() {
+  		$dnow = date('Y-m-d');
+  		$cek = $this->db->get_where('data',array('date'=>$dnow))->num_rows();
+  		if ($cek > 0) {
+  			$this->db->set('counter','counter+1', FALSE)->where('date',$dnow)->update('data');
+  		} else {
+  			$this->db->insert('data', array('date'=>$dnow, 'counter'=>1));
+  		}
+	}
 
 	public function get_batik_id($id){
 	 $query=$this->db->get_where('produk', array('id'=>$id));
@@ -110,6 +126,9 @@ class Batik_model extends CI_Model{
 
 		public function delete_data($id){
 		 return $this->db->delete('produk',array('id'=>$id));
+		}
+		public function delete_data1($id){
+		 return $this->db->delete('kontak',array('id'=>$id));
 		}
 
 		function cek_login($table,$where){

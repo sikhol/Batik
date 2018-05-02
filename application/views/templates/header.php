@@ -29,13 +29,13 @@
 
     <!-- DataTables Responsive CSS -->
     <link href="<?php echo base_url('assets/vendor/datatables-responsive/dataTables.responsive.css') ?>" rel="stylesheet">
-
     <!-- Custom CSS -->
 
 
         <script src="<?php echo base_url('https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js') ?>"></script>
         <script src="<?php echo base_url('https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js') ?>"></script>
-
+    <script src="<?php echo base_url('assets/vendor/jquery/jquery.min.js') ?>"></script>
+    <script src="<?php echo base_url('assets/vendor/morrisjs/morris.min.js') ?>"></script>
 
 </head>
 
@@ -291,7 +291,7 @@
                         <li>
                             <a href="<?php echo base_url("admin/kontak");?>"><i class="glyphicon glyphicon-envelope"></i> Kontak</a>
                         </li>
-                      
+
 
 
 

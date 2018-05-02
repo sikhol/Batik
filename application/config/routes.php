@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 $route['login'] = 'Login';
-$route['batik/(:any)'] = 'Batik/index/$1';
+$route['batik'] = 'Batik/index';
 $route['batik/pagination/(:any)'] = 'Batik/pagination/$1';
 $route['admin'] = 'Admin/index';
 $route['admin/(:any)'] = 'Admin/index/$1';

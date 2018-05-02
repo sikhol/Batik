@@ -17,7 +17,7 @@ class Login extends CI_Controller{
         $password = $this->input->post('password');
         $where = array(
             'username' => $username,
-            'password' =>$password
+            'password' =>md5($password)
             );
         $cek = $this->batik_model->cek_login('admin',$where)->num_rows();
         if($cek > 0){
@@ -33,6 +33,7 @@ class Login extends CI_Controller{
 
         }else{
             echo "Username dan password salah !";
+            echo $username." ".md5($password);
         }
     }
 

@@ -37,7 +37,7 @@
                                         <td>
 
                                           <a href="<?php echo
-                                              site_url('admin/delete/'.$u['id']);?>">Hapus</a>
+                                              base_url('admin/delete1/'.$u['id']);?>">Hapus</a>
                                         </td>
                                     </tr>
                                   <?php endforeach; ?>

@@ -26,7 +26,7 @@
 		    -ms-transition: all .2s ease-in-out;
 		}
 		.transisi {
-		    -webkit-transform: scale(1.8); 
+		    -webkit-transform: scale(1.8);
 		    -moz-transform: scale(1.8);
 		    -o-transform: scale(1.8);
 		    transform: scale(1.8);
@@ -96,11 +96,11 @@
 
 					<div class="col-sm-12" id="produk">
 
-						
+
 					</div>
 					<div class="col-sm-12" id="pagination_link">
 						<ul class="pagination pagination-lg pag-pro">
-							
+
 							<!-- <li class="active"><a href="#">1</a></li>
 							<li><a href="#">2</a></li>
 							<li><a href="#">3</a></li>
@@ -119,7 +119,7 @@
 
 					<?php echo form_open(base_url('batik/create'));?>
 
-					<?php echo "<script></script>"; ?>
+
 						<div id="form-wrap" class="col-sm-12" style="margin-bottom: 40px">
 							<div class="col-sm-4">
 								<input type="text" name="nama" class="form-text" placeholder="Name">
@@ -138,7 +138,7 @@
 						</div>
 						<div class="col-sm-12" >
 							<div class="col-sm-12" id="btn-wrap">
-								<button id="kirim"><span style="margin-right: 5px;color: #0CB594" class="glyphicon glyphicon-envelope"></span>Send Message</button>
+								<button type="submit" id="kirim"><span style="margin-right: 5px;color: #0CB594" class="glyphicon glyphicon-envelope"></span>Send Message</button>
 							</div>
 						</div>
 					<?php echo form_close(); ?>
@@ -198,7 +198,7 @@
 			   		}
 			  	});
 			 }
-			 
+
 			load_country_data(0);
 			$(document).ready(function(){
 				$(document).on("click", ".pagination li a", function(event){
@@ -222,7 +222,7 @@
 	        function fsIconClick(isFullscreen, ninjaSldr) { //fsIconClick is the default event handler of the fullscreen button
 	            if (isFullscreen) {
 	                ninjaSldr.style.display = "none";
-	                
+
 	            }
 
 	        }

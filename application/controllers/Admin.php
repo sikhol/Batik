@@ -15,10 +15,11 @@ class Admin extends CI_Controller {
 
 
   public function index($halaman='index'){
-
+    
     $data['depan']=$this->batik_model->get_frontend();
 
     $data['batik']=$this->batik_model->get_batik();
+    $data['graf'] = $this->batik_model->get_counter();
 
     $this->load->view('templates/header');
     $this->load->view('admin/'.$halaman,$data);
@@ -135,6 +136,11 @@ public function delete($id){
   $this->batik_model->delete_data($id);
   redirect('admin/table');
 }
+public function delete1($id){
+  $this->batik_model->delete_data1($id);
+  redirect('admin/kontak');
+}
+
 
 
 
