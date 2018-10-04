@@ -14,8 +14,8 @@
 	<script src="<?php echo base_url('assets/js/jque.js') ?> "></script>
 	<script src="<?php echo base_url('assets/js/bootstrap.min.js') ?>"></script>
 	<link href="<?php echo base_url('assets/fontawesome/css/font-awesome.min.css') ?>" rel="stylesheet">
-	<script src="<?php echo base_url('https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js') ?>"></script>
-	<script src="<?php echo base_url('https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js') ?>"></script>
+	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 	<style type="text/css">
 		img#zoom {
 		    width: 350px;
@@ -35,6 +35,7 @@
 </head>
 <body>
 	<div id="header">
+	
 		<div class="container">
 			<div id="logo-bks">
 				<img id="img-logo" src="<?php echo base_url(); ?>assets/images/logo.png">
@@ -57,6 +58,7 @@
 						</ul>
 					</div>
 				</nav>
+				
 
 				<h1 id="head-text">
 					BATIK <br> BERKUALTAS
@@ -70,22 +72,30 @@
 				<div class="col-sm-4">
 					<div class="img-about">
 						<img src="<?php echo base_url(); ?>assets/images/cms_1.8.png">
-						<h4 class="sub-jdl-about">GRATIS ONGKIR SE INDONESIA</h4>
-						<p class="p-about">Etiam dapibus, arcu eget efficitur ultricies, nisi urna bibendum felis, laoreet posuere justo risus vel sem.</p>
+						<?php foreach ($ongkir as $u) : ?>
+						<h4 class="sub-jdl-about"><?php echo $u['judul']; ?></h4>
+						<p class="p-about"><?php echo $u['deskripsi']; ?></p>
+					<?php endforeach; ?>
 					</div>
 				</div>
 				<div class="col-sm-4">
 					<div class="img-about">
 						<img src="<?php echo base_url(); ?>assets/images/cms_1.9.png">
-						<h4 class="sub-jdl-about">GARANSI UANG KEMBALI</h4>
-						<p class="p-about">Etiam dapibus, arcu eget efficitur ultricies, nisi urna bibendum felis, laoreet posuere justo risus vel sem.</p>
+						
+						<?php foreach ($garansi as $u) : ?>
+						<h4 class="sub-jdl-about"><?php echo $u['judul']; ?></h4>
+						<p class="p-about"><?php echo $u['deskripsi']; ?></p>
+					<?php endforeach; ?>
+				
 					</div>
 				</div>
 				<div class="col-sm-4">
 					<div class="img-about">
 						<img src="<?php echo base_url(); ?>assets/images/cms_1.10.png">
-						<h4 class="sub-jdl-about">ONLINE SUPPORT 24 JAM </h4>
-						<p class="p-about">Etiam dapibus, arcu eget efficitur ultricies, nisi urna bibendum felis, laoreet posuere justo risus vel sem.</p>
+						<?php foreach ($online as $u) : ?>
+						<h4 class="sub-jdl-about"><?php echo $u['judul']; ?></h4>
+						<p class="p-about"><?php echo $u['deskripsi']; ?></p>
+					<?php endforeach; ?>
 					</div>
 				</div>
 			</div>
@@ -122,7 +132,7 @@
 
 						<div id="form-wrap" class="col-sm-12" style="margin-bottom: 40px">
 							<div class="col-sm-4">
-								<input type="text" name="nama" class="form-text" placeholder="Name">
+								<input type="text" name="nama" class="form-text" placeholder="Name" required>
 							</div>
 							<div class="col-sm-4">
 								<input type="email" name="email" class="form-text" placeholder="Email">

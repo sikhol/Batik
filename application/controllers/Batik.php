@@ -12,7 +12,11 @@ class Batik extends CI_Controller {
 
 	public function index() {
     $this->batik_model->counter();
-    $this->load->view('frontend/batik');
+
+   $data['ongkir']=$this->batik_model->get_batik('ongkir');
+   $data['online']=$this->batik_model->get_batik('online');
+   $data['garansi']=$this->batik_model->get_batik('garansi');
+    $this->load->view('frontend/batik',$data);
 	}
 
   public function pagination($start=0) {
